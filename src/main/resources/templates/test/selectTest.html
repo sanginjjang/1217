@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+</head>
+<body>
+	<h1>테스트 선택창</h1>
+	<div th:include="fragments/layout :: link"></div>
+	<div style="display:flex; gap:30px;">
+		<a th:href="@{/test/test/1}">국어 치러가기</a>
+		<a th:href="@{/test/test/2}">영어 치러가기</a>
+		<a th:href="@{/test/test/3}">수학 치러가기</a>
+		<a th:href="@{/test/test/4}">자바 치러가기</a>
+	</div>
+</body>
+</html>

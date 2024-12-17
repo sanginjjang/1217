@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+<style>
+h1>span {
+	color: blue;
+}
+</style>
+</head>
+<body>
+	<h1>
+		여기는 <span>[[${student.name}]]</span>님의 성적 페이지
+	</h1>
+	<header th:include="/fragments/layout::link"></header>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>국어</td>
+				<td>영어</td>
+				<td>수학</td>
+				<td>스프링</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>[[${student.korean}]]</td>
+				<td>[[${student.english}]]</td>
+				<td>[[${student.math}]]</td>
+				<td>[[${student.spring}]]</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

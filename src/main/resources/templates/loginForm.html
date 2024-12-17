@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+</head>
+<body>
+	<h1>로그인폼</h1>
+	<div th:include="fragments/layout :: link"></div>
+	<div th:if="${msg != null}" th:text="${msg}"></div>
+	<form action="/loginProc" method="post">
+		id : <input type="text" name="username"><br><br> 
+		pw : <input type="text" name="password"><br><br> 
+		<input type="submit" value="로그인">
+	</form>
+</body>
+</html>

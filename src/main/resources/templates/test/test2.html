@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>영어 시험</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+<link rel="stylesheet" href="/css/testStyle.css">
+</head>
+<body>
+	<h1>영어 시험</h1>
+<div th:include="fragments/layout :: link"></div>
+
+	<form action="/test/submit">
+		<input type="hidden" name="tno" value="2">
+		<div>	
+			<p>문제 1: "Apple"의 뜻은 무엇인가?</p>
+			<select name="answer1">
+				<option value="1">1. 바나나</option>
+				<option value="2">2. 사과</option>
+				<option value="3">3. 포도</option>
+				<option value="4">4. 오렌지</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 2: "Hello"의 올바른 뜻은 무엇인가?</p>
+			<select name="answer2">
+				<option value="1">1. 안녕</option>
+				<option value="2">2. 고마워</option>
+				<option value="3">3. 사랑해</option>
+				<option value="4">4. 미안해</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 3: "Dog"의 뜻은 무엇인가?</p>
+			<select name="answer3">
+				<option value="1">1. 고양이</option>
+				<option value="2">2. 강아지</option>
+				<option value="3">3. 새</option>
+				<option value="4">4. 물고기</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 4: "Run"의 뜻은 무엇인가?</p>
+			<select name="answer4">
+				<option value="1">1. 걷다</option>
+				<option value="2">2. 뛰다</option>
+				<option value="3">3. 자다</option>
+				<option value="4">4. 먹다</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 5: "Blue"의 뜻은 무엇인가?</p>
+			<select name="answer5">
+				<option value="1">1. 빨간색</option>
+				<option value="2">2. 파란색</option>
+				<option value="3">3. 노란색</option>
+				<option value="4">4. 초록색</option>
+			</select>
+		</div>
+
+		<input type="submit" class="submit-btn" value="답지 제출">
+	</form>
+</body>
+</html>

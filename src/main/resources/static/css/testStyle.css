@@ -1,0 +1,45 @@
+@charset "UTF-8";
+body{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+.question {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+select {
+	margin-top: 10px;
+	padding: 5px;
+	font-size: 16px;
+}
+
+.submit-btn {
+	align-self: center;
+	width: 200px;
+	padding: 10px;
+	font-size: 16px;
+	background-color: #007BFF;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.submit-btn:hover {
+	background-color: #0056b3;
+}

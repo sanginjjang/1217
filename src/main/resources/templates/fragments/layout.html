@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:fragment="link">
+	<hr>
+		<div style="display:flex; gap:30px;">
+			<a href="/">홈으로</a>
+			<a href="/registForm">회원가입하기</a>
+			<a href="/loginForm">로그인하기</a>
+			<a href="/student/main">학생 메인으로 가기</a>
+			<a href="/admin/main">관리자 메인으로 가기</a>
+			<a href="/test/selectTest">시험 고르러 가기</a>
+			<a href="/test/result">시험 결과 보러 가기</a>
+		</div>
+	<hr>
+</div>
+</body>
+</html>

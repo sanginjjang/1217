@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+</head>
+<body>
+<h1>여기는 학생 메인페이지</h1>
+<header th:include="/fragments/layout::link"></header>
+<span th:if="${msg != null}" th:text="${msg}"></span>
+</body>
+</html>

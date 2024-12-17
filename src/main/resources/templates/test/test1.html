@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+<link rel="stylesheet" href="/css/testStyle.css">
+<meta charset="UTF-8">
+<title>국어 시험 페이지</title>
+
+</head>
+<body>
+	<h1>국어 시험</h1>
+	<div th:include="fragments/layout :: link"></div>
+	<div id="display" style="color : red; font-size : 2rem; font-weight:bold;">5:00</div>
+	<form action="/test/submit" method="POST" id="examForm">
+		<input type="hidden" name="tno" value="1">
+		<div class="question">
+			<p>문제 1: 한글을 창제한 왕은 누구인가?</p>
+			<select name="answer1">
+				<option value="1">1. 세종대왕</option>
+				<option value="2">2. 정조</option>
+				<option value="3">3. 태조</option>
+				<option value="4">4. 숙종</option>
+			</select>
+		</div>
+
+		<div class="question">
+			<p>문제 2: 다음 중 비유법에 해당하는 표현은?</p>
+			<select name="answer2">
+				<option value="1">1. 나무가 자란다</option>
+				<option value="2">2. 강물이 흐른다</option>
+				<option value="3">3. 하늘이 우는구나</option>
+				<option value="4">4. 바람이 분다</option>
+			</select>
+		</div>
+
+		<div class="question">
+			<p>문제 3: 국문학에 해당하는 작품은?</p>
+			<select name="answer3">
+				<option value="1">1. 햄릿</option>
+				<option value="2">2. 춘향전</option>
+				<option value="3">3. 돈키호테</option>
+				<option value="4">4. 레미제라블</option>
+			</select>
+		</div>
+
+		<div class="question">
+			<p>문제 4: 책이 날아갔다에서 사용된 표현법은?</p>
+			<select name="answer4">
+				<option value="1">1. 직유법</option>
+				<option value="2">2. 의인화</option>
+				<option value="3">3. 은유법</option>
+				<option value="4">4. 과장법</option>
+			</select>
+		</div>
+
+		<div class="question">
+			<p>문제 5: 봄날은 간다라는 노래 제목에서 표현된 것은?</p>
+			<select name="answer5">
+				<option value="1">1. 직유법</option>
+				<option value="2">2. 은유법</option>
+				<option value="3">3. 과장법</option>
+				<option value="4">4. 의인화</option>
+			</select>
+		</div>
+
+		<input type="submit" class="submit-btn" value="답지 제출">
+	</form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+	//const inputTime = document.querySelector("#inputTime");
+	const display = document.querySelector("#display");
+	let timer;
+	let intervalId;
+	startTimer();
+	
+	function startTimer() {
+		//value = parseInt(inputTime.value);
+		value = 5;
+		alert("입력받은 시간 = " + value + "분");
+		timer = value * 60;
+		if (intervalId) {
+			clearInterval(intervalId);
+		}		
+		
+		intervalId = setInterval(() => {
+			const minutes = Math.floor(timer / 60);
+			const seconds = timer % 60;
+			timer--;
+			display.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+			
+			if (timer < 0) {
+				clearInterval(intervalId);
+				display.innerHTML = "시간 종료!";
+				sendResult();
+			}
+		}, 10);
+	}
+	function sendResult() {
+	    const form = document.querySelector("#examForm");
+
+	    const data = {
+	        answer1: form.answer1.value,
+	        answer2: form.answer2.value,
+	        answer3: form.answer3.value,
+	        answer4: form.answer4.value,
+	        answer5: form.answer5.value
+	    };
+
+	    console.log("전송할 데이터:", data);
+
+	    axios.post('/test/submit', data)
+	        .then(function (response) {
+	            console.log("서버 응답:", response.data);
+	            alert("답안이 성공적으로 제출되었습니다!");
+	        })
+	        .catch(function (error) {
+	            console.error("에러 발생:", error);
+	            alert("답안 제출에 실패했습니다.");
+	        });
+	}
+
+</script>
+</html>

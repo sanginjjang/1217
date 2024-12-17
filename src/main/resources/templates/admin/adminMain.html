@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+</head>
+<body>
+	<h1>여기는 어드민 메인 페이지</h1>
+	<header th:include="/fragments/layout::link"></header>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>아이디</td>
+				<td>비밀번호</td>
+				<td>이름</td>
+				<td>국어 성적</td>
+				<td>영어 성적</td>
+				<td>수학 성적</td>
+				<td>스프링 성적</td>
+				<td>-</td>
+			</tr>
+		</thead>
+		<tbody>
+			<th:block th:each="student : ${list}">
+				<tr>
+					<td>[[${student.username}]]</td>
+					<td>[[${student.password}]]</td>
+					<td>[[${student.name}]]</td>
+					<td>[[${student.korean}]]</td>
+					<td>[[${student.english}]]</td>
+					<td>[[${student.math}]]</td>
+					<td>[[${student.spring}]]</td>
+					<td><a
+						th:href="@{/student/deleteStudent/{username}(username=${student.username})}">계정삭제</a></td>
+				</tr>
+			</th:block>
+		</tbody>
+	</table>
+</body>
+</html>

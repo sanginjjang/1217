@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바 문제 페이지</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+<link rel="stylesheet" href="/css/testStyle.css">
+</head>
+<body>
+	<h1>자바 시험</h1>
+	<div th:include="fragments/layout :: link"></div>
+	<form action="/test/submit" method="POST">
+		<input type="hidden" name="tno" value="4">
+		<div>
+			<p>문제 1: 자바에서 메인 메서드의 시그니처는 무엇인가?</p>
+			<select name="answer1">
+				<option value="1">1. public static void main(String[] args)</option>
+				<option value="2">2. static public void main(String args[])</option>
+				<option value="3">3. public void main(String args)</option>
+				<option value="4">4. void main(String[] args)</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 2: 자바에서 "클래스"를 정의하는 키워드는?</p>
+			<select name="answer2">
+				<option value="1">1. define</option>
+				<option value="2">2. class</option>
+				<option value="3">3. struct</option>
+				<option value="4">4. object</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 3: 자바에서 배열의 크기를 확인하는 속성은?</p>
+			<select name="answer3">
+				<option value="1">1. size</option>
+				<option value="2">2. length</option>
+				<option value="3">3. count</option>
+				<option value="4">4. capacity</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 4: 다음 중 자바의 예약어가 아닌 것은?</p>
+			<select name="answer4">
+				<option value="1">1. new</option>
+				<option value="2">2. goto</option>
+				<option value="3">3. switch</option>
+				<option value="4">4. instance</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 5: 자바에서 예외를 처리하기 위한 키워드는?</p>
+			<select name="answer5">
+				<option value="1">1. try</option>
+				<option value="2">2. catch</option>
+				<option value="3">3. finally</option>
+				<option value="4">4. 모두 해당</option>
+			</select>
+		</div>
+
+		<input type="submit" class="submit-btn" value="답지 제출">
+	</form>
+</body>
+</html>

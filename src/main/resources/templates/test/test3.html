@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수학 문제 페이지</title>
+<link rel="stylesheet" href="/css/bodyStyle.css">
+<link rel="stylesheet" href="/css/testStyle.css">
+</head>
+<body>
+	<h1>수학 시험</h1>
+<div th:include="fragments/layout :: link"></div>
+	<form action="/test/submit" method="POST">
+		<input type="hidden" name="tno" value="3">
+		<div>
+			<p>문제 1: 5 + 3의 값은?</p>
+			<select name="answer1">
+				<option value="1">1. 6</option>
+				<option value="2">2. 7</option>
+				<option value="3">3. 8</option>
+				<option value="4">4. 9</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 2: 9 × 9의 값은?</p>
+			<select name="answer2">
+				<option value="1">1. 81</option>
+				<option value="2">2. 72</option>
+				<option value="3">3. 90</option>
+				<option value="4">4. 99</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 3: 12 ÷ 4의 값은?</p>
+			<select name="answer3">
+				<option value="1">1. 2</option>
+				<option value="2">2. 3</option>
+				<option value="3">3. 4</option>
+				<option value="4">4. 5</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 4: 다음 중 소수는?</p>
+			<select name="answer4">
+				<option value="1">1. 4</option>
+				<option value="2">2. 6</option>
+				<option value="3">3. 7</option>
+				<option value="4">4. 9</option>
+			</select>
+		</div>
+
+		<div>
+			<p>문제 5: 피타고라스의 정리에 따르면 직각삼각형의 빗변의 길이를 구하는 공식은?</p>
+			<select name="answer5">
+				<option value="1">1. a² + b² = c²</option>
+				<option value="2">2. a² - b² = c²</option>
+				<option value="3">3. a² × b² = c²</option>
+				<option value="4">4. a² ÷ b² = c²</option>
+			</select>
+		</div>
+
+		<input type="submit" class="submit-btn" value="답지 제출">
+	</form>
+</body>
+</html>
